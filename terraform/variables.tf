@@ -11,3 +11,8 @@ variable "service_name" {
   type        = string
   default     = "lambda-web-proxy"
 }
+
+variable "proxy_url" {
+  description = "The proxy url."
+  type        = string
+}

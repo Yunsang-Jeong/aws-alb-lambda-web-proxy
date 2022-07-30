@@ -26,6 +26,11 @@ resource "aws_lambda_function" "this" {
     security_group_ids = [aws_security_group.lambda.id]
   }
 
+  environment {
+    variables = {
+      PROXY_URL = var.proxy_url
+    }
+  }
 }
 ################################################################################
 

@@ -8,9 +8,9 @@ resource "aws_security_group" "alb" {
   vpc_id      = module.network.vpc_id
 
   ingress {
-    description      = "TLS from Public"
-    from_port        = 443
-    to_port          = 443
+    description      = "from Public"
+    from_port        = 80
+    to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = ["${chomp(data.http.my_publid_ip.body)}/32"]
   }
